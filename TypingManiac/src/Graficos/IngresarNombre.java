@@ -39,8 +39,6 @@ public class IngresarNombre extends JPanel implements KeyListener{
         
         this.w = w;
         
-        
-        
         /*-------------------------COMPONENTES---------------------------*/
         
         this.etiquetaNombre = new JLabel("Ingrese su nombre", SwingConstants.CENTER);
@@ -53,41 +51,46 @@ public class IngresarNombre extends JPanel implements KeyListener{
         
         /*----------------------------EVENTOS-------------------------------*/
         
-        this.botonJugar.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-                
-                //Datos datos = new Datos();
-                
-                try {
-                    ObjectInputStream datosPartida = new ObjectInputStream(new FileInputStream("Datos.dat"));
+        this.botonJugar.addActionListener((ActionEvent ae) -> {
             
-                    Datos datos = (Datos) datosPartida.readObject();
+            ////////////////Cargando partida
+            
+            Datos datos = new Datos();
+            datos.setNombre(this.cuadroNombre.getText());
+            changePanel(new PanelJuego(w, 0 , 0, 120, cuadroNombre.getText()));
+
+
+            /* 
+            try {
+                ObjectInputStream datosPartida = new ObjectInputStream(new FileInputStream("Datos.dat"));
+                
+                datos = (Datos) datosPartida.readObject();
+                System.out.println(datosPartida.readObject());
+                System.out.println("nombre: " + datos.getNombre());
+                
+                if(datos.getNombre().equals(cuadroNombre.getText())){
                     
-                    if(datos.getNombre().equals(cuadroNombre.getText())){
-                        System.out.println("PARTIDA SI CARGADA");
-                        changePanel(new PanelJuego(w, datos.getPuntos(), datos.getNumeroPalabra() , datos.getTiempo() , cuadroNombre.getText()));
-                    }
-                    else{
+                    System.out.println("PARTIDA SI CARGADA");
+                    changePanel(new PanelJuego(w, datos.getPuntos(), datos.getNumeroPalabra() , datos.getTiempo() , cuadroNombre.getText()));
+                    
+                }else{
+                    if( datos.getNombre().equals(null) ){
+                        System.out.println("Partida nueva");
                         changePanel(new PanelJuego(w, 0 , 0, 120, cuadroNombre.getText()));
-                    }
-            
-                    datosPartida.close();
-                    
-                    
-            
-                } catch (Exception ex) {
-            
-                    System.out.println("PARTIDA NO CARGADA");
-                    
-                    changePanel(new PanelJuego(w, 0 , 0, 120, ""));
-            
-                } 
+                    } 
+                }
                 
+                //datosPartida.close();
                 
-            }
+            } catch (Exception ex) {
+                
+                System.out.println("PARTIDA NO CARGADA 80");
+                
+                //changePanel(new PanelJuego(w, 0 , 0, 120, ""));
+                
+            }*/
         });
-        
+
         this.addKeyListener(this);
         
         /*----------------------------DISEÑO-------------------------------*/

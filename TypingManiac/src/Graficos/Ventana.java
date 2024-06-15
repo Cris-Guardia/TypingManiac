@@ -14,6 +14,10 @@ import javax.swing.JPanel;
  * 
  * Esta es la Ventana del juego
  * 
+ * Es la clase principal principal
+ * 
+ * Maneja unicamente el panel menu
+ * 
  */
 
 
@@ -30,6 +34,7 @@ public class Ventana extends JFrame{
         setPreferredSize(new Dimension(800, 500));
         
         setResizable(false);
+        
         /*--------------------------FUNCIONALIDADES--------------------*/
         
         setVisible(true);

@@ -1,3 +1,8 @@
+/**
+ * Clase principal del programa. Se encarga de cargar la ventana unicamente.
+ * 
+ * 
+ * */
 package Principal;
 
 import Graficos.Ventana;

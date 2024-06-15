@@ -16,7 +16,13 @@ import javax.swing.SwingConstants;
  * 
  * @author Cristofer Guardia
  * 
- * Esta claser es el menu del juego
+ * Clase panel Menu, gesiona los 3 paneles 
+ * 
+ * 1) Ingresar juego
+ * 
+ * 2) Regrals
+ * 
+ * 3) Derechos
  * 
  */
 

@@ -11,6 +11,9 @@ import javax.swing.JPanel;
 /**
  *
  * @author Guardia
+ * 
+ * 
+ * Proposito, verificar si el juego ya esta terminado
  */
 public class Terminado extends JPanel{
 

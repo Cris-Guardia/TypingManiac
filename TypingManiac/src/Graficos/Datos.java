@@ -16,6 +16,11 @@ public class Datos implements Serializable{
     private String nombre;
 
     public Datos() {
+        this.puntos = 0;
+        this.numeroPalabra = 0;
+        this.tiempo = 0;
+        this.nombre = "";
+        this.nivel = 0;
     }
 
     public Datos(int puntos, int numeroPalabra, int tiempo) {
